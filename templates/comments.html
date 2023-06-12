@@ -1,0 +1,17 @@
+<html>
+<body>
+    <div align=center>
+    <h1>{{tip.hero.name}}</h1>
+    <img src = {{tip.hero.hero_img_url}} />
+    <b><h2><u>{{tip.title}}</u></h2></b>
+    <p style = "width:400px"><b>{{ tip.text }}</b></p>
+    <button onclick="location.href =' {% url 'addComment' tip.id %} '" id="indexBtn" class="float-left submit-button" >Add Comment</button><br>
+    <br>
+    <button onclick="location.href =' {% url 'hero_index' tip.hero.id %} '" id="indexBtn" class="float-left submit-button" >Back</button><br>
+    <h2>Comments</h2>
+    {% for comment in comments %}
+    <li>{{comment.text}}</li><br>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1>Heroes</h1>
+    {% for hero in heroes %}
+    <li><a style="color:inherit" href ="{% url 'hero_index' hero.id %}"><img style="width:64px;height:36px" src="{{ hero.hero_img_url }}">{{hero.name}}</a></li>
+    {% endfor %}
+<br><br><button onclick="location.href =' {% url 'heroes_search' %} '" id="filterBtn" class="float-left submit-button" >Search heroes</button>
+</body>
+</html>

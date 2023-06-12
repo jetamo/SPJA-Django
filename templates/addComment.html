@@ -1,0 +1,14 @@
+<html>
+<body>
+<h1>Add tip</h1>
+<form action="{% url 'addComment' tip_id %}" method="POST">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit" value="Add">
+</form>
+<br><br>
+<button onclick="location.href =' {% url 'comments' tip_id %} '" id="indexBtn" class="float-left submit-button" >Back</button><br>
+</body>
+</html>

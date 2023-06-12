@@ -1,0 +1,19 @@
+<html>
+<body>
+<h1> Heroes</h1>
+{% for hero in heroes %}
+<li><a href ="{% url 'hero_index' hero.id %}"><img style="width:64px;height:36px" src="{{ hero.hero_img_url }}">{{hero.name}}</a></li>
+{% endfor %}
+
+<form action="{% url 'heroes_search' %}" method="post">
+{% csrf_token %}
+<br>
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit" value="Search">
+</form>
+<br><button onclick="location.href =' {% url 'heroes' %} '" id="indexBtn" class="float-left submit-button" >Back to index</button>
+
+</body>
+</html>

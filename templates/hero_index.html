@@ -1,0 +1,17 @@
+<html>
+<body>
+    <div align=center>
+    <h1>{{hero.name}}</h1>
+    <img src = {{hero.hero_img_url}} />
+    <br><br>
+    <button onclick="location.href =' {% url 'addTip' hero.id %} '" id="indexBtn" class="float-left submit-button" >Add Tip</button><br>
+    <br>
+    <button onclick="location.href =' {% url 'heroes' %} '" id="indexBtn" class="float-left submit-button" >Back to index</button><br>
+    <h2><b></u><u>Tips</b></u></h2>
+    {% for tip in tips %}
+    <a style="color:inherit;text-decoration: none;" href="{% url 'comments' tip.id %}"><h4>{{tip.title}}</h4></a>
+    <li style="width:400px">{{tip.text}}</li>
+    {% endfor %}
+    </div>
+</body>
+</html>
